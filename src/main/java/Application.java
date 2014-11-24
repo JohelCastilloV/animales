@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
 /**
- * Created by johel on 24/11/2014.
+ * Created by lucero on 24/11/2014.
  */
 
 @ComponentScan

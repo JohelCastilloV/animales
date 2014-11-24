@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Created by johel on 24/11/2014.
+ * Created by lucero on 24/11/2014.
  */
 
 @RestController
@@ -18,7 +18,7 @@ public class AnimalRestService {
 
 
     @RequestMapping("/animal")
-    public Animal greeting(@RequestParam(value="sonido", defaultValue="miau") String sonido ) {
+    public Animal mostrarAnimal(@RequestParam(value="sonido", defaultValue="miau") String sonido ) {
         return animalService.obtenerAnimal(sonido);
     }
 

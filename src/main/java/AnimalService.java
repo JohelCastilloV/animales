@@ -3,7 +3,7 @@ import CLIPSJNI.PrimitiveValue;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by johel on 24/11/2014.
+ * Created by lucero on 24/11/2014.
  */
 @Service
 public class AnimalService {
@@ -11,17 +11,16 @@ public class AnimalService {
 Environment clips;
       AnimalService(){
       clips = new Environment();
-
+      clips.load("animalitos.clp");
 
       }
     public Animal obtenerAnimal(String sonido) {
-        clips.load("animalitos.clp");
+
         String nombre = null;
         try {
         if("miau".equals(sonido)){
             System.out.println("aqui si normal");
             PrimitiveValue eval = clips.eval("(assert (sonido miau))");
-            System.out.println("carajo "+eval.toString());
         }
 
         if("guau".equals(sonido)){
@@ -38,13 +37,9 @@ Environment clips;
 
         String evaluar ="(find-all-facts ((?v animal)) TRUE)";
         PrimitiveValue value=clips.eval(evaluar);
-        System.out.println("donde me caigo");
 
         nombre="";
-
-            System.out.println("tamales ");
-            System.out.println("que sale "+value.getValue().toString());
-             nombre=value.get(0).getFactSlot("nombre").toString();
+         nombre=value.get(0).getFactSlot("nombre").toString();
         } catch (Exception e) {
             System.out.println("entre porfin");
             clips.reset();

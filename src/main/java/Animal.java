@@ -1,7 +1,7 @@
 import CLIPSJNI.Environment;
 
 /**
- * Created by johel on 24/11/2014.
+ * Created by lucero on 24/11/2014.
  */
 public class Animal {
 
