@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Animales</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <link rel="icon" type="image/png" href="fav.png">
     <script src="js/angular.min.js"></script>
 </head>
 <body ng-app>
@@ -12,7 +15,12 @@
 <h1>Animales</h1>
 <p>Averigua que animal hace el siguiente sonido</p>
    </div>
+<div class="container">
+
+    <div class="row">
 <form class="text-center" ng-controller="AnimalesController">
+<div class="col-md-2 col-md-offset-3">
+    <div class="radios">
 <div class="radio">
 <label>
     <input type="radio" ng-model="sonido"  value="miau" checked>
@@ -37,17 +45,27 @@
         Mu
     </label>
 </div>
-<button ng-click="mostrarAnimal()">Enviar</button>
+    </div>
+    <button ng-click="mostrarAnimal()">Enviar</button>
+</div>
 
+    <div class="col-md-4">
     <div class="thumbnails">
 
 
             <h3>{{animal.nombre}}</h3>
-            <img ng-src="img/{{animal.nombre}}.jpg" width="100px" class="img-circle">
+            <img ng-src="img/{{animal.nombre}}.jpg" width="200px" class="img-circle">
             <p> {{animal.sonido}}</p>
 
-    </div>
-</form>
+</div>
 
+
+    </div>
+
+
+
+</form>
+    </div>
+</div>
 </body>
 </html>
